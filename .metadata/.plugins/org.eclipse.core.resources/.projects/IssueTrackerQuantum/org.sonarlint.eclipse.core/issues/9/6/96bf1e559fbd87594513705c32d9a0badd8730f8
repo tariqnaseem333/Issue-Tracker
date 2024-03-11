@@ -1,0 +1,11 @@
+
+a
+java:S24471"-Null is returned but a "Boolean" is expected.b 37a6259cc0c1dae299a7866489dff0bdh
+_
+java:S1168B"+Return an empty collection instead of null.b 37a6259cc0c1dae299a7866489dff0bdh
+_
+java:S1168O"+Return an empty collection instead of null.b 37a6259cc0c1dae299a7866489dff0bdh
+g
+java:S1068"3Remove this unused "assigneeService" private field.b 2f55bbd479b707b8cf997d524776a2a5h
+`
+java:S1068",Remove this unused "issueDAO" private field.b 63e628d39b96b6e7f319c8cc3fcec86fh

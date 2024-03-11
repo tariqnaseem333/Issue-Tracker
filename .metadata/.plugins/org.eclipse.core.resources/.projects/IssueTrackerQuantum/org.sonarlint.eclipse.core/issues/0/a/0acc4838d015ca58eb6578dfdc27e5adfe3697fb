@@ -1,0 +1,19 @@
+
+v	java:S125"<This block of commented-out lines of code should be removed.8ŸÆíâ1b 4db619948f3cce0ec23ff477e458ccach
+i
+java:S1128".Remove this unused import 'java.util.HashMap'.8öÑÈíâ1b d84992d255a05fff2c29a54090661da8h
+e
+java:S1128"*Remove this unused import 'java.util.Map'.8öÑÈíâ1b 03ec136776d19432e0a31b46ebe07d1ah
+z
+java:S1128"?Remove this unused import 'com.issuetracker.model.IssueReport'.8öÑÈíâ1b 91b6b9c330aaa0891856729ce12b21bch
+–
+java:S1450"[Remove the "issueService" field and declare it as a local variable in the relevant methods.8ÆÊíâ1b 899e3e8ae8f16e01e2ce2e327488abc4h
+f
+java:S1128"+Remove this unused import 'java.util.List'.8ÆÊíâ1b 647165940d2971f696436f6a7da1f89dh
+ˆ
+java:S1128"MRemove this unused import 'com.issuetracker.exception.IssueTrackerException'.8ÆÊíâ1b fb415a598b661788ae6bbe08765a4518h
+t
+java:S1128
+"9Remove this unused import 'com.issuetracker.model.Issue'.8ÆÊíâ1b ff8ac96f56db56548a72f18c702d9584h
+k
+java:S1068"0Remove this unused "issueService" private field.8ÆÊíâ1b 899e3e8ae8f16e01e2ce2e327488abc4h

@@ -1,0 +1,49 @@
+package com.issuetracker.dao;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.EnumMap;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.issuetracker.model.Assignee;
+import com.issuetracker.model.Unit;
+
+public class AssigneeDAOImpl implements AssigneeDAO {
+    
+    private List<Assignee> assigneeList = null;
+    
+    public AssigneeDAOImpl() {
+	// will implement this method
+    }
+
+    /**
+     * @params
+     *         unit - The assignee unit
+     * 
+     * @operation Fetches the assignees list for the given unit
+     * 
+     * @returns
+     *          List<Assignee> - List of assignees fetched
+     */
+    @Override
+    public List<Assignee> fetchAssignees(Unit unit) {
+	// will implement this method
+    }
+
+    /**
+     * @params
+     *         assigneeEmail - The assignee email id
+     * 
+     * @operation Fetches the assignee by the given email of the assignee
+     * 
+     * @returns
+     *          Assignee - The fetched assignee object
+     */
+    @Override
+    public Assignee getAssigneeByEmail(String assigneeEmail) {
+//	will implement this method
+    }
+}
