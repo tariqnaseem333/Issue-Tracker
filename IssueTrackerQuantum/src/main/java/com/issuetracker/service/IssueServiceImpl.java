@@ -22,8 +22,7 @@ public class IssueServiceImpl implements IssueService {
 //  Instance Variables
     private AssigneeService assigneeService = new AssigneeServiceImpl();
     private IssueDAO issueDAO = new IssueDAOImpl();
-//  Use below after implementing Validator class
-//  private Validator validator = new Validator();
+    private Validator validator = new Validator();
     
     /**
      * @params
@@ -39,8 +38,7 @@ public class IssueServiceImpl implements IssueService {
      */
     @Override
     public String reportAnIssue(Issue issue) throws IssueTrackerException {
-//	Use below after implementing Validator class
-//	validator.validate(issue);
+	validator.validate(issue);
 	List<Assignee> assigneeList = assigneeService.fetchAssignee(issue.getIssueUnit());
 	if( !assigneeList.isEmpty() ) {
 	    issue.setAssigneeEmail(assigneeList.get(0).getAssigneeEmail());
