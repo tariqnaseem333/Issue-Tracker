@@ -1,17 +1,0 @@
-
-a
-java:S2447"-Null is returned but a "Boolean" is expected.b 37a6259cc0c1dae299a7866489dff0bdh
-b
-java:S1172".Remove this unused method parameter "issueId".b c7a6e653c95b2d7b920bb73efecd8fc1h
-a
-java:S2447"-Null is returned but a "Boolean" is expected.b 37a6259cc0c1dae299a7866489dff0bdh
-k
-java:S1172"7Remove this unused method parameter "issueDescription".b a2493550acef10f70168c37f5c2dbb6ch
-a
-java:S2447$"-Null is returned but a "Boolean" is expected.b 37a6259cc0c1dae299a7866489dff0bdh
-e
-java:S1172 "1Remove this unused method parameter "reportedOn".b 3ec32e19688261be2760c6827be7ebb3h
-a
-java:S2447+"-Null is returned but a "Boolean" is expected.b 37a6259cc0c1dae299a7866489dff0bdh
-a
-java:S1172'"-Remove this unused method parameter "status".b 9acb44549b41563697bb490144ec6258h

@@ -319,3 +319,271 @@ java.lang.reflect.InaccessibleObjectException: Unable to make public void sun.ni
 2024-03-11 18:57:38,132 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
 2024-03-11 18:57:38,132 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
 2024-03-11 18:57:54,508 [ForkJoinPool.commonPool-worker-1] INFO  j.exodus.util.CompressBackupUtil - Backup file "local_only_issue_backup2024-03-11-18-57-54.tar.gz" created.
+2024-03-11 19:15:32,388 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-03-11 19:15:33,209 [ForkJoinPool.commonPool-worker-1] INFO  o.s.s.s.o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sonarLintSpringAppConfig' of type [org.sonarsource.sonarlint.core.spring.SonarLintSpringAppConfig$$EnhancerBySpringCGLIB$$25f56bd2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-03-11 19:15:33,279 [ForkJoinPool.commonPool-worker-1] INFO  o.s.s.s.o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'provideClientEventBus' of type [com.google.common.eventbus.AsyncEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-03-11 19:15:34,156 [ForkJoinPool.commonPool-worker-1] INFO  jetbrains.exodus.io.FileDataWriter - Interruptible file channel will be used
+java.lang.reflect.InaccessibleObjectException: Unable to make public void sun.nio.ch.FileChannelImpl.setUninterruptible() accessible: module java.base does not "exports sun.nio.ch" to unnamed module @354613ca
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:199)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:193)
+	at jetbrains.exodus.io.FileDataWriter$Companion$setUninterruptibleMethod$1.invoke(FileDataWriter.kt:188)
+	at jetbrains.exodus.io.FileDataWriter$Companion$setUninterruptibleMethod$1.invoke(FileDataWriter.kt:185)
+	at jetbrains.exodus.util.UnsafeHolder.doPrivileged$lambda-0(UnsafeHolder.kt:30)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at jetbrains.exodus.util.UnsafeHolder.doPrivileged(UnsafeHolder.kt:29)
+	at jetbrains.exodus.io.FileDataWriter.<clinit>(FileDataWriter.kt:185)
+	at jetbrains.exodus.io.FileDataReaderWriterProvider.newFileDataWriter(FileDataReaderWriterProvider.kt:48)
+	at jetbrains.exodus.io.FileDataReaderWriterProvider.newReaderWriter(FileDataReaderWriterProvider.kt:30)
+	at jetbrains.exodus.log.LogConfig.createReaderWriter(LogConfig.java:359)
+	at jetbrains.exodus.log.LogConfig.getReader(LogConfig.java:125)
+	at jetbrains.exodus.log.Log.<init>(Log.kt:52)
+	at jetbrains.exodus.env.Environments.newLogInstance(Environments.kt:117)
+	at jetbrains.exodus.env.Environments.newLogInstance(Environments.kt:81)
+	at jetbrains.exodus.env.Environments.newLogInstance(Environments.kt:77)
+	at jetbrains.exodus.env.Environments$newInstance$4.invoke(Environments.kt:46)
+	at jetbrains.exodus.env.Environments$newInstance$4.invoke(Environments.kt:46)
+	at jetbrains.exodus.env.Environments.prepare(Environments.kt:120)
+	at jetbrains.exodus.env.Environments.newInstance(Environments.kt:46)
+	at org.sonarsource.sonarlint.core.local.only.XodusLocalOnlyIssueStore.buildEntityStore(XodusLocalOnlyIssueStore.java:201)
+	at org.sonarsource.sonarlint.core.local.only.XodusLocalOnlyIssueStore.<init>(XodusLocalOnlyIssueStore.java:94)
+	at org.sonarsource.sonarlint.core.local.only.LocalOnlyIssueStorageService.get(LocalOnlyIssueStorageService.java:49)
+	at org.sonarsource.sonarlint.core.local.only.LocalOnlyIssueStorageService.purgeOldIssues(LocalOnlyIssueStorageService.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.sonarsource.sonarlint.shaded.org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
+	at org.sonarsource.sonarlint.shaded.org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.sonarsource.sonarlint.core.SonarLintBackendImpl.lambda$initialize$2(SonarLintBackendImpl.java:63)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+2024-03-11 19:15:34,161 [ForkJoinPool.commonPool-worker-1] WARN  jetbrains.exodus.io.FileDataWriter - Can't open directory channel. Log directory fsync won't be performed.
+2024-03-11 19:15:34,332 [ForkJoinPool.commonPool-worker-1] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: C:\Users\Tariq Naseem\.sonarlint\xodus-local-only-issue-store10163193727328175462
+2024-03-11 19:15:34,336 [ForkJoinPool.commonPool-worker-1] INFO  j.exodus.gc.GarbageCollector - Queueing ComputeUtilizationFromScratchJob
+2024-03-11 19:15:44,153 [Exodus shared background cleaner] INFO  j.exodus.gc.GarbageCollector - Started calculation of log utilization from scratch at C:\Users\Tariq Naseem\.sonarlint\xodus-local-only-issue-store10163193727328175462
+2024-03-11 19:15:44,164 [Exodus shared background cleaner] INFO  j.exodus.gc.GarbageCollector - Finished calculation of log utilization from scratch at C:\Users\Tariq Naseem\.sonarlint\xodus-local-only-issue-store10163193727328175462
+2024-03-11 19:48:31,257 [ForkJoinPool.commonPool-worker-14] INFO  j.exodus.util.CompressBackupUtil - Backup file "local_only_issue_backup2024-03-11-19-48-31.tar.gz" created.
+2024-03-12 21:37:54,100 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-03-12 21:37:55,097 [ForkJoinPool.commonPool-worker-1] INFO  o.s.s.s.o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sonarLintSpringAppConfig' of type [org.sonarsource.sonarlint.core.spring.SonarLintSpringAppConfig$$EnhancerBySpringCGLIB$$a095c447] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-03-12 21:37:55,183 [ForkJoinPool.commonPool-worker-1] INFO  o.s.s.s.o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'provideClientEventBus' of type [com.google.common.eventbus.AsyncEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-03-12 21:37:56,224 [ForkJoinPool.commonPool-worker-1] INFO  jetbrains.exodus.io.FileDataWriter - Interruptible file channel will be used
+java.lang.reflect.InaccessibleObjectException: Unable to make public void sun.nio.ch.FileChannelImpl.setUninterruptible() accessible: module java.base does not "exports sun.nio.ch" to unnamed module @70ab2331
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:199)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:193)
+	at jetbrains.exodus.io.FileDataWriter$Companion$setUninterruptibleMethod$1.invoke(FileDataWriter.kt:188)
+	at jetbrains.exodus.io.FileDataWriter$Companion$setUninterruptibleMethod$1.invoke(FileDataWriter.kt:185)
+	at jetbrains.exodus.util.UnsafeHolder.doPrivileged$lambda-0(UnsafeHolder.kt:30)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at jetbrains.exodus.util.UnsafeHolder.doPrivileged(UnsafeHolder.kt:29)
+	at jetbrains.exodus.io.FileDataWriter.<clinit>(FileDataWriter.kt:185)
+	at jetbrains.exodus.io.FileDataReaderWriterProvider.newFileDataWriter(FileDataReaderWriterProvider.kt:48)
+	at jetbrains.exodus.io.FileDataReaderWriterProvider.newReaderWriter(FileDataReaderWriterProvider.kt:30)
+	at jetbrains.exodus.log.LogConfig.createReaderWriter(LogConfig.java:359)
+	at jetbrains.exodus.log.LogConfig.getReader(LogConfig.java:125)
+	at jetbrains.exodus.log.Log.<init>(Log.kt:52)
+	at jetbrains.exodus.env.Environments.newLogInstance(Environments.kt:117)
+	at jetbrains.exodus.env.Environments.newLogInstance(Environments.kt:81)
+	at jetbrains.exodus.env.Environments.newLogInstance(Environments.kt:77)
+	at jetbrains.exodus.env.Environments$newInstance$4.invoke(Environments.kt:46)
+	at jetbrains.exodus.env.Environments$newInstance$4.invoke(Environments.kt:46)
+	at jetbrains.exodus.env.Environments.prepare(Environments.kt:120)
+	at jetbrains.exodus.env.Environments.newInstance(Environments.kt:46)
+	at org.sonarsource.sonarlint.core.local.only.XodusLocalOnlyIssueStore.buildEntityStore(XodusLocalOnlyIssueStore.java:201)
+	at org.sonarsource.sonarlint.core.local.only.XodusLocalOnlyIssueStore.<init>(XodusLocalOnlyIssueStore.java:94)
+	at org.sonarsource.sonarlint.core.local.only.LocalOnlyIssueStorageService.get(LocalOnlyIssueStorageService.java:49)
+	at org.sonarsource.sonarlint.core.local.only.LocalOnlyIssueStorageService.purgeOldIssues(LocalOnlyIssueStorageService.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.sonarsource.sonarlint.shaded.org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.sonarsource.sonarlint.shaded.org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
+	at org.sonarsource.sonarlint.shaded.org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.sonarsource.sonarlint.core.SonarLintBackendImpl.lambda$initialize$2(SonarLintBackendImpl.java:63)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+2024-03-12 21:37:56,233 [ForkJoinPool.commonPool-worker-1] WARN  jetbrains.exodus.io.FileDataWriter - Can't open directory channel. Log directory fsync won't be performed.
+2024-03-12 21:37:56,580 [ForkJoinPool.commonPool-worker-1] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: C:\Users\Tariq Naseem\.sonarlint\xodus-local-only-issue-store4258284680743803265
+2024-03-12 21:37:56,591 [ForkJoinPool.commonPool-worker-1] INFO  j.exodus.gc.GarbageCollector - Queueing ComputeUtilizationFromScratchJob
+2024-03-12 21:38:04,696 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Updating Gradle version information cache failed. Using outdated cache.
+2024-03-12 21:38:06,210 [Exodus shared background cleaner] INFO  j.exodus.gc.GarbageCollector - Started calculation of log utilization from scratch at C:\Users\Tariq Naseem\.sonarlint\xodus-local-only-issue-store4258284680743803265
+2024-03-12 21:38:06,226 [Exodus shared background cleaner] INFO  j.exodus.gc.GarbageCollector - Finished calculation of log utilization from scratch at C:\Users\Tariq Naseem\.sonarlint\xodus-local-only-issue-store4258284680743803265
+2024-03-12 21:39:44,387 [Worker-22: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:39:44,388 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:39:46,923 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:39:46,930 [Worker-22: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:39:46,932 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:39:46,932 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:40:18,514 [Worker-17: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:40:18,515 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:40:18,519 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:40:18,527 [Worker-17: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:40:18,527 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:40:18,528 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:40:57,268 [Worker-16: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:40:57,269 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:40:57,271 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:40:57,275 [Worker-16: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:40:57,276 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:40:57,276 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:41:30,030 [Worker-8: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:41:30,031 [Worker-8: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:41:30,034 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:41:30,038 [Worker-8: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:41:30,039 [Worker-8: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:41:30,039 [Worker-8: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:41:48,696 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:41:48,697 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:41:48,699 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:41:48,703 [Worker-19: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:41:48,705 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:41:48,705 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:42:21,625 [Worker-24: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:42:21,627 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:42:21,628 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:42:21,631 [Worker-24: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:42:21,632 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:42:21,633 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:42:46,947 [Worker-4: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:42:46,948 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:42:46,949 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:42:46,952 [Worker-4: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:42:46,953 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:42:46,953 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:43:09,255 [Worker-24: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:43:09,256 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:43:09,258 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:43:09,262 [Worker-24: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:43:09,263 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:43:09,263 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:45:01,199 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:45:01,200 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:45:01,201 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:45:01,205 [Worker-23: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:45:01,206 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:45:01,206 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:45:05,899 [Worker-28: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:45:05,901 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:45:05,902 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:45:05,905 [Worker-28: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:45:05,906 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:45:05,906 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:45:15,625 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:45:15,626 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:45:15,627 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:45:15,630 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:45:15,630 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:45:15,631 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:45:35,028 [Worker-10: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:45:35,029 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:45:35,031 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:45:35,034 [Worker-10: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:45:35,035 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:45:35,035 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:46:05,132 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:46:05,133 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:46:05,136 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:46:05,139 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:46:05,140 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:46:05,140 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:46:21,860 [Worker-7: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:46:21,862 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:46:21,864 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:46:21,867 [Worker-7: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:46:21,867 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:46:21,868 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:46:37,577 [Worker-18: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:46:37,579 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:46:37,580 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:46:37,583 [Worker-18: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:46:37,584 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:46:37,584 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:46:48,264 [Worker-16: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:46:48,266 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:46:48,267 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:46:48,274 [Worker-16: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:46:48,275 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:46:48,275 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:46:59,322 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:46:59,324 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:46:59,326 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:46:59,328 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:46:59,329 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:46:59,329 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:47:09,754 [Worker-28: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:47:09,755 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:47:09,757 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:47:09,759 [Worker-28: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:47:09,760 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:47:09,760 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources
+2024-03-12 21:48:14,202 [Worker-18: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:48:14,203 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\main\resources
+2024-03-12 21:48:14,205 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Test Source directory: C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\java added.
+2024-03-12 21:48:14,208 [Worker-18: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-03-12 21:48:14,209 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\test\resources
+2024-03-12 21:48:14,209 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Tariq Naseem\Desktop\Java Lex Projects\Project3_Issue Tracker\IssueTrackerQuantum\src\verification\resources

@@ -2,8 +2,6 @@
 B
 OverallReport.json,1\8\18a6193d4ccb367db3ec8588884a6b3b65286a36
 g
-7src/main/java/com/issuetracker/validator/Validator.java,d\b\db14dcfa0e39f0e84183fb692b95d937d82d6ef3
-g
 7src/main/java/com/issuetracker/dao/AssigneeDAOImpl.java,8\a\8abe6bd6ad58eb0e5a53bea15e9a6937773d1e1b
 ^
 .src/main/java/com/issuetracker/model/Unit.java,1\b\1bdd3d6e86405ed79867b5f9c0b1496d73037492

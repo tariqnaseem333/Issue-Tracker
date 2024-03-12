@@ -1,10 +1,17 @@
 package com.issuetracker.service;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import com.issuetracker.dao.IssueDAO;
+import com.issuetracker.dao.IssueDAOImpl;
 import com.issuetracker.exception.IssueTrackerException;
+import com.issuetracker.model.Assignee;
 import com.issuetracker.model.Issue;
 import com.issuetracker.model.IssueReport;
 import com.issuetracker.model.IssueStatus;
@@ -12,8 +19,11 @@ import com.issuetracker.validator.Validator;
 
 public class IssueServiceImpl implements IssueService {
     
-    private AssigneeService assigneeService;
-    private IssueDAO issueDAO; 
+//  Instance Variables
+    private AssigneeService assigneeService = new AssigneeServiceImpl();
+    private IssueDAO issueDAO = new IssueDAOImpl();
+//  Use below after implementing Validator class
+//  private Validator validator = new Validator();
     
     /**
      * @params
@@ -29,8 +39,17 @@ public class IssueServiceImpl implements IssueService {
      */
     @Override
     public String reportAnIssue(Issue issue) throws IssueTrackerException {
-	// will implement this method
-	return null;
+//	Use below after implementing Validator class
+//	validator.validate(issue);
+	List<Assignee> assigneeList = assigneeService.fetchAssignee(issue.getIssueUnit());
+	if( !assigneeList.isEmpty() ) {
+	    issue.setAssigneeEmail(assigneeList.get(0).getAssigneeEmail());
+	    assigneeService.updateActiveIssueCount(issue.getAssigneeEmail(), 'I');
+	}
+	String issueId = issueDAO.reportAnIssue(issue);
+	if( issueId == null )
+	    throw new IssueTrackerException("An issue with the same ID already exists!");
+	return issueId;
     }
 
     /**
@@ -45,8 +64,19 @@ public class IssueServiceImpl implements IssueService {
      */
     @Override
     public Boolean updateStatus(String issueId, IssueStatus status) throws IssueTrackerException {
-	// will implement this method 
-	return null;
+	Issue issue = issueDAO.getIssueById(issueId);
+	if( issue == null ) 
+	    throw new IssueTrackerException("An issue with the given ID is not found!");
+	else if( issue.getStatus().equals(status) ) 
+	    throw new IssueTrackerException("There is no change in the issue status!");
+	else if( status.equals(IssueStatus.RECALLED) && !issue.getStatus().equals(IssueStatus.OPEN) ) 
+	    throw new IssueTrackerException("The current issue status is incompatible for recall!");
+	else {
+	    issueDAO.updateStatus(issue, status);
+	    if (!(IssueStatus.OPEN.equals(issue.getStatus()) || IssueStatus.IN_PROGRESS.equals(issue.getStatus())))
+		assigneeService.updateActiveIssueCount(issue.getAssigneeEmail(), 'D');
+	}  
+	return true;
     }
 
     /**
@@ -62,8 +92,30 @@ public class IssueServiceImpl implements IssueService {
      */
     @Override
     public List<IssueReport> showIssues(Map<Character, Object> filterCriteria) throws IssueTrackerException {
-	// will implement this method
-	return null;
+	List<Issue> issueList = issueDAO.getIssueList();
+	List<Issue> filteredIssues = new ArrayList<>();
+	Set<Character> keySet = filterCriteria.keySet();
+	for( Character key : keySet ) {
+	    if( key.equals('A') ) {
+		filteredIssues = issueList.parallelStream()
+					  .filter( issue -> issue.getAssigneeEmail().equals(filterCriteria.get(key)) )
+					  .collect(Collectors.toList());
+	    }
+	    else if( key.equals('S') ) {
+		filteredIssues = issueList.parallelStream()
+			  .filter( issue -> issue.getStatus().toString().equals(filterCriteria.get(key)) )
+			  .collect(Collectors.toList());
+	    }
+	}
+	List<IssueReport> issueReports = new ArrayList<>();
+	for( Issue filteredIssue : filteredIssues )  {
+	    IssueReport issueReport = new IssueReport( filteredIssue.getIssueId(), filteredIssue.getIssueDescription(), 
+	                                   filteredIssue.getAssigneeEmail(), filteredIssue.getStatus());
+	    issueReports.add(issueReport);
+	}
+	if( issueReports.isEmpty() )
+	    throw new IssueTrackerException("No issues are found for the requested criteria!");
+	return issueReports;
     }
 
     /**
@@ -75,8 +127,17 @@ public class IssueServiceImpl implements IssueService {
      */
     @Override
     public List<Issue> deleteIssues() throws IssueTrackerException {
-	// will implement this method
-	return null;
+	List<Issue> issueList = issueDAO.getIssueList();
+	List<Issue> deletedIssues = new ArrayList<>();
+	for( Issue issue : issueList ) {
+	    if( ( IssueStatus.RESOLVED.equals(issue.getStatus())|| IssueStatus.CLOSED.equals(issue.getStatus()) )
+		&& ( ChronoUnit.DAYS.between(issue.getUpdatedOn(), LocalDate.now()) >= 14 ) ) {
+		deletedIssues.add(issue);
+	    }
+	}
+	if( deletedIssues.isEmpty() )
+	    throw new IssueTrackerException("No issues are old enough to be cleared!");
+	return deletedIssues;
     }
     
 }
