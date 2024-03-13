@@ -1,3 +1,5 @@
 
-s
-java:S1128"8Remove this unused import 'java.util.stream.Collectors'.8ﬂÖ®Ì‚1b f2ddee9c4f289ca38ea8377e7bdbf814h
+Ü
+java:S1192)"KDefine a constant instead of duplicating this literal "carry.luke" 3 times.8æµµõ„1b b492ecd7e1672ab93b27fb9acfc1ff54h
+ä
+java:S11925"ODefine a constant instead of duplicating this literal "rodrick_luther" 4 times.8æµµõ„1b 3098631908fe32721adde25e8235eac5h

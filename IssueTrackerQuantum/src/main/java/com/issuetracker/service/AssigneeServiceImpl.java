@@ -1,15 +1,17 @@
 package com.issuetracker.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.issuetracker.dao.AssigneeDAO;
-
+import com.issuetracker.dao.AssigneeDAOImpl;
 import com.issuetracker.model.Assignee;
 import com.issuetracker.model.Unit;
 
 public class AssigneeServiceImpl implements AssigneeService {
     
-    private AssigneeDAO assigneeDAO;
+//  Instance Variables
+    private AssigneeDAO assigneeDao = new AssigneeDAOImpl();
 
     /**
      * @params
@@ -22,9 +24,10 @@ public class AssigneeServiceImpl implements AssigneeService {
      */
     @Override
     public List<Assignee> fetchAssignee(Unit unit) {
-	// will implement this method
-	return null;
-    }
+	return assigneeDao.fetchAssignees(unit).stream()
+		       .filter(assignee -> assignee.getNumberOfIssuesActive() < 3)
+		       .collect(Collectors.toList());
+}
 
     /**
      * @params
@@ -37,7 +40,14 @@ public class AssigneeServiceImpl implements AssigneeService {
      */
     @Override
     public void updateActiveIssueCount(String assigneeEmail, Character operation) {
-//	will implement this method
+	
+	Assignee matchedAssignee = assigneeDao.getAssigneeByEmail(assigneeEmail);
+	if( operation.equals('I') ) {
+	    matchedAssignee.setNumberOfIssuesActive(matchedAssignee.getNumberOfIssuesActive()+1);
+	} else if( operation.equals('D') ) {
+	    matchedAssignee.setNumberOfIssuesActive(matchedAssignee.getNumberOfIssuesActive()-1);
+	}
+
     }
     
 }
