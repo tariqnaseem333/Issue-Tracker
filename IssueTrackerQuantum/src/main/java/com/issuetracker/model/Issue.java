@@ -4,7 +4,6 @@ import java.time.LocalDate;
 
 public class Issue {
     
-//  Instance Variables
     private String issueId;
     private String issueDescription;
     private Unit issueUnit;
@@ -13,9 +12,8 @@ public class Issue {
     private String assigneeEmail;
     private IssueStatus status;
 
-//  Constructor
     public Issue(String issueId, String issueDescription, Unit issueUnit, LocalDate reportedOn, 
-                 LocalDate updatedOn, String assigneeEmail, IssueStatus status) {
+                 LocalDate updatedOn, String assigneeEmail, IssueStatus status) { 
 	this.issueId = issueId;
 	this.issueDescription = issueDescription;
 	this.issueUnit = issueUnit;
@@ -25,7 +23,6 @@ public class Issue {
 	this.status = status;
     }
 
-//  Getters and Setters
     public String getIssueId() {
 	return issueId;
     }
@@ -68,4 +65,5 @@ public class Issue {
     public void setStatus(IssueStatus status) {
 	this.status = status;
     }
+    
 }

@@ -4,37 +4,34 @@ import java.time.LocalDate;
 
 public class Assignee {
     
-//  Instance Variables
     private String assigneeId;
-    private String asigneeName;
+    private String assigneeName;
     private String assigneeEmail;
-    private Unit workingUnit;
+    private Unit workingunit;
     private LocalDate employeeSince;
-    private Integer numberOfIssuesActive;
+    private Integer numberofIssuesActive;
     
-//  Constructor
-    public Assignee(String assigneeId, String asigneeName, String assigneeEmail, 
-                    Unit workingUnit, LocalDate employeeSince, Integer numberOfIssuesActive) {
+    public Assignee(String assigneeId, String assigneeName, String assigneeEmail, 
+                    Unit workingunit, LocalDate employeeSince, Integer numberofIssuesActive) { 
 	this.assigneeId = assigneeId;
-	this.asigneeName = asigneeName;
+	this.assigneeName = assigneeName;
 	this.assigneeEmail = assigneeEmail;
-	this.workingUnit = workingUnit;
+	this.workingunit = workingunit;
 	this.employeeSince = employeeSince;
-	this.numberOfIssuesActive = numberOfIssuesActive;
+	this.numberofIssuesActive = numberofIssuesActive;
     }
     
-//  Getters and Setters
-    public String getAssigneeId() {
+    public String getAssigneeId(){
         return assigneeId;
     }
     public void setAssigneeId(String assigneeId) {
         this.assigneeId = assigneeId;
     }
-    public String getAsigneeName() {
-        return asigneeName;
+    public String getAssigneeName() {
+        return assigneeName;
     }
-    public void setAsigneeName(String asigneeName) {
-        this.asigneeName = asigneeName;
+    public void setAssigneeName(String assigneeName) {
+        this.assigneeName = assigneeName;
     }
     public String getAssigneeEmail() {
         return assigneeEmail;
@@ -42,11 +39,11 @@ public class Assignee {
     public void setAssigneeEmail(String assigneeEmail) {
         this.assigneeEmail = assigneeEmail;
     }
-    public Unit getWorkingUnit() {
-        return workingUnit;
+    public Unit getWorkingunit() {
+        return workingunit;
     }
-    public void setWorkingUnit(Unit workingUnit) {
-        this.workingUnit = workingUnit;
+    public void setWorkingunit(Unit workingunit) {
+        this.workingunit = workingunit;
     }
     public LocalDate getEmployeeSince() {
         return employeeSince;
@@ -54,11 +51,11 @@ public class Assignee {
     public void setEmployeeSince(LocalDate employeeSince) {
         this.employeeSince = employeeSince;
     }
-    public Integer getNumberOfIssuesActive() {
-        return numberOfIssuesActive;
+    public Integer getNumberofIssuesActive() {
+        return numberofIssuesActive;
     }
-    public void setNumberOfIssuesActive(Integer numberOfIssuesActive) {
-        this.numberOfIssuesActive = numberOfIssuesActive;
+    public void setNumberofIssuesActive(Integer numberofIssuesActive) {
+        this.numberofIssuesActive = numberofIssuesActive;
     }
     
 }

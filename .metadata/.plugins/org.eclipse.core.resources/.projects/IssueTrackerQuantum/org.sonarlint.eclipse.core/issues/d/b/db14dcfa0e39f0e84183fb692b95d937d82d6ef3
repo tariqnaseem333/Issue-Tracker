@@ -1,17 +1,11 @@
 
-a
-java:S2447"-Null is returned but a "Boolean" is expected.b 37a6259cc0c1dae299a7866489dff0bdh
-b
-java:S1172".Remove this unused method parameter "issueId".b c7a6e653c95b2d7b920bb73efecd8fc1h
-a
-java:S2447"-Null is returned but a "Boolean" is expected.b 37a6259cc0c1dae299a7866489dff0bdh
-k
-java:S1172"7Remove this unused method parameter "issueDescription".b a2493550acef10f70168c37f5c2dbb6ch
-a
-java:S2447$"-Null is returned but a "Boolean" is expected.b 37a6259cc0c1dae299a7866489dff0bdh
-e
-java:S1172 "1Remove this unused method parameter "reportedOn".b 3ec32e19688261be2760c6827be7ebb3h
-a
-java:S2447+"-Null is returned but a "Boolean" is expected.b 37a6259cc0c1dae299a7866489dff0bdh
-a
-java:S1172'"-Remove this unused method parameter "status".b 9acb44549b41563697bb490144ec6258h
+c
+java:S5411"(Use a primitive boolean expression here.8õ÷„ëã1b eaf23c62bfd78648c08fa05ff68985e2h
+c
+java:S5411"(Use a primitive boolean expression here.8õ÷„ëã1b c4b4562df9c0c9cf1149369194756eceh
+c
+java:S5411"(Use a primitive boolean expression here.8õ÷„ëã1b d4225c46f2d3d4702bc91cb7161bcf21h
+c
+java:S5411"(Use a primitive boolean expression here.8õ÷„ëã1b 17939eb05104afbdd6a8170892173b83h
+‡
+java:S5998"LRefactor this repetition that can lead to a stack overflow for large inputs.8³»‡ëã1b ab80596a0fc9b204b9bae59fdfd22930h

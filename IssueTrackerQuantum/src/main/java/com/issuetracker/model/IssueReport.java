@@ -2,21 +2,19 @@ package com.issuetracker.model;
 
 public class IssueReport {
     
-//  Instance Variables
     private String issueId;
     private String issueDescription;
     private String assigneeEmail;
     private IssueStatus status;
     
-//  Constructor
-    public IssueReport(String issueId, String issueDescription, String assigneeEmail, IssueStatus status) {
+    public IssueReport(String issueId, String issueDescription, 
+                       String assigneeEmail, IssueStatus status) {
 	this.issueId = issueId;
 	this.issueDescription = issueDescription;
 	this.assigneeEmail = assigneeEmail;
 	this.status = status;
     }
-    
-//  Getters and Setters
+
     public String getIssueId() {
         return issueId;
     }
@@ -40,6 +38,6 @@ public class IssueReport {
     }
     public void setStatus(IssueStatus status) {
         this.status = status;
-    }   
-    
+    }
+     
 }

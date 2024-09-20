@@ -2,39 +2,53 @@ package com.issuetracker.validator;
 
 import java.time.LocalDate;
 
+import org.apache.commons.logging.LogFactory;
+
 import com.issuetracker.exception.IssueTrackerException;
 import com.issuetracker.model.Issue;
 import com.issuetracker.model.IssueStatus;
 
 public class Validator {
-
+    
     public void validate(Issue issue) throws IssueTrackerException {
-
-	if( !this.isValidIssueId(issue.getIssueId()) )
-	    throw new IssueTrackerException("The issue ID is of invalid format!");
-	else if( !this.isValidIssueDescription(issue.getIssueDescription()) )
-	    throw new IssueTrackerException("The issue description is of unacceptable format!");
-	else if( !this.isValidReportedOn(issue.getReportedOn()) )
-	    throw new IssueTrackerException("The reported date is incorrect!");
-	else if( !this.isValidStatus(issue.getStatus()) )
-	    throw new IssueTrackerException("The status of the issue is inappropriate!");
-
+	String errorMessage = null;
+	
+	if(!isValidIssueId(issue.getIssueId()))
+	    errorMessage = "Validator.INVALID_ISSUE_ID";
+	else if(!isValidIssueDescription(issue.getIssueDescription()))
+	    errorMessage = "Validator.INVALID_ISSUE_DESCRIPTION";
+	else if(!isValidReportedOn(issue.getReportedOn()))
+	    errorMessage = "Validator.INVALID_REPORTED_DATE";
+	else if(!isValidStatus(issue.getStatus()))
+	    errorMessage = "Validator.INVALID_STATUS";
+	
+	if(errorMessage != null) {
+	    IssueTrackerException exception = new IssueTrackerException(errorMessage);
+	    LogFactory.getLog(getClass()).error(exception.getMessage(), exception);
+	    throw exception;
+	}
+	
     }
 
     public Boolean isValidIssueId(String issueId) {
-	return issueId.matches("(MTI-I)-(\\d{2}[1-9])-(LS|MS|HS)");
+	return !(issueId.isBlank() || issueId == null) && 
+	       (issueId.matches("(MTI-I)-([\\d]{3})-(LS|MS|HS)")) && 
+	       !issueId.contains("000");
     }
 
     public Boolean isValidIssueDescription(String issueDescription) {
-	return (!issueDescription.isBlank()) && issueDescription.matches("([A-Z][a-z]+)(\\s[a-z]+)+");
+	return !(issueDescription.isBlank() || issueDescription == null) &&
+		(issueDescription.length() >= 1 && issueDescription.length() <= 50 ) && 
+		issueDescription.matches("(?! )[A-Za-z]+([ ][A-Za-z]+)*(?! )");
     }
 
     public Boolean isValidReportedOn(LocalDate reportedOn) {
-	return ( reportedOn.isEqual(LocalDate.now()) || reportedOn.isBefore(LocalDate.now()));
+	return reportedOn != null && reportedOn.isBefore(LocalDate.now());
     }
 
     public Boolean isValidStatus(IssueStatus status) {
-	return ( status.equals(IssueStatus.OPEN) || status.equals(IssueStatus.IN_PROGRESS) );
+	return status != null && (status.equals(IssueStatus.OPEN) || 
+		status.equals(IssueStatus.IN_PROGRESS));
     }
-
+    
 }

@@ -35,3 +35,5 @@ l
 <src/main/java/com/issuetracker/service/IssueServiceImpl.java,9\6\96bf1e559fbd87594513705c32d9a0badd8730f8
 g
 7src/main/java/com/issuetracker/validator/Validator.java,d\b\db14dcfa0e39f0e84183fb692b95d937d82d6ef3
+C
+DetailedReport.json,7\b\7b04e2512601fd0420340e272df827b24a48f000

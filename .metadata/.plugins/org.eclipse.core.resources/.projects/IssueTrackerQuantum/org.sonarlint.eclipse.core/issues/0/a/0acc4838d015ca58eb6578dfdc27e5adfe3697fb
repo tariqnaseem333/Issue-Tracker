@@ -1,19 +1,31 @@
 
-t
-java:S1128
-"9Remove this unused import 'com.issuetracker.model.Issue'.8∆é Ì‚1b ff8ac96f56db56548a72f18c702d9584h
-k
-java:S1068"0Remove this unused "issueService" private field.8∆é Ì‚1b 899e3e8ae8f16e01e2ce2e327488abc4h
-à
-java:S1128"MRemove this unused import 'com.issuetracker.exception.IssueTrackerException'.8∆é Ì‚1b fb415a598b661788ae6bbe08765a4518h
-i
-java:S1128".Remove this unused import 'java.util.HashMap'.8ˆ—»Ì‚1b d84992d255a05fff2c29a54090661da8h
-f
-java:S1128"+Remove this unused import 'java.util.List'.8∆é Ì‚1b 647165940d2971f696436f6a7da1f89dh
-v	java:S125"<This block of commented-out lines of code should be removed.8üç∆Ì‚1b 4db619948f3cce0ec23ff477e458ccach
-ñ
-java:S1450"[Remove the "issueService" field and declare it as a local variable in the relevant methods.8∆é Ì‚1b 899e3e8ae8f16e01e2ce2e327488abc4h
-z
-java:S1128"?Remove this unused import 'com.issuetracker.model.IssueReport'.8ˆ—»Ì‚1b 91b6b9c330aaa0891856729ce12b21bch
-e
-java:S1128"*Remove this unused import 'java.util.Map'.8ˆ—»Ì‚1b 03ec136776d19432e0a31b46ebe07d1ah
+c
+java:S5411@"(Use a primitive boolean expression here.8ÏÏÒÍ„1b 575e19dbb36299898ce0e0508d1fcd17h
+Ö
+java:S11923"JDefine a constant instead of duplicating this literal "ERROR: %s" 4 times.8¥ûÛÍ„1b 4cee76e7d9b606d0aeb8d82283230f67h
+å
+java:S1192$"QDefine a constant instead of duplicating this literal "Mont Trance Inc." 3 times.8¥ûÛÍ„1b 35b1e4d3228f0df899f658da72b02073h
+‘
+java:S1192k"òDefine a constant instead of duplicating this literal "=======================================================================================" 3 times.8¥ûÛÍ„1b d7d8e95da2f60531749ebca995c795b3h
+—
+java:S1192Y"ïDefine a constant instead of duplicating this literal "====================================================================================" 3 times.8¥ûÛÍ„1b 4c41b728088e215ed7864b0dbe09978eh
+æ
+java:S11921"ÇDefine a constant instead of duplicating this literal "An error seems to have occurred! Please try again after sometime." 4 times.8¥ûÛÍ„1b ac1ee2d76e9ab70777477480a65d52f8h
+å
+java:S3457Z"Q%n should be used in place of \n to produce the platform-specific line separator.8¥ûÛÍ„1b 8b009865c1ecfed2bc900bb617e7ecdfh
+å
+java:S3457`"Q%n should be used in place of \n to produce the platform-specific line separator.8¥ûÛÍ„1b 4aa2ebeb59cfc5244931dca2d669eb6bh
+å
+java:S3457l"Q%n should be used in place of \n to produce the platform-specific line separator.8¥ûÛÍ„1b 3e0c147c12e14a0ac8d0fafa0b2da1e3h
+å
+java:S3457s"Q%n should be used in place of \n to produce the platform-specific line separator.8¥ûÛÍ„1b ae4e00a239314c10c8a32b7fdacda042h
+Ñ
+java:S1192["IDefine a constant instead of duplicating this literal "Issue ID" 3 times.8Ã≥ıÍ„1b 60dfaa3fe7ed0fa9d7eeef33cc073b25h
+ç
+java:S1192["RDefine a constant instead of duplicating this literal "Issue Description" 3 times.8Ã≥ıÍ„1b 0532113633fe9c1a2b2e0c0938fc52a0h
+‡
+java:S1192é"£Define a constant instead of duplicating this literal "==================================================================================================" 3 times.8Ã≥ıÍ„1b dbe644fd42ea3304e7a1d96e6f918ffbh
+ç
+java:S3457è"Q%n should be used in place of \n to produce the platform-specific line separator.8Ã≥ıÍ„1b 0a518a8167f19859d5d750995c3f968fh
+ç
+java:S3457î"Q%n should be used in place of \n to produce the platform-specific line separator.8Ã≥ıÍ„1b 33baaffdcd4bc8c888db1a39ce97f02ah
