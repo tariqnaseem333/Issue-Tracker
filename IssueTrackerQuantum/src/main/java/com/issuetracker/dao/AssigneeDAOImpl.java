@@ -54,8 +54,8 @@ public class AssigneeDAOImpl implements AssigneeDAO {
 	                                     "elane_lester", Unit.SHIPMENT, 
 	                                     LocalDate.now().minusWeeks(243), 1);
 	
-	 Assignee assigneeEleven = new Assignee("MTI-A-SHP-002",
-	                                        "Valery Champion", "valery_c", Unit.SHIPMENT, 
+	 Assignee assigneeEleven = new Assignee("MTI-A-SHP-002", "Valery Champion",
+	                                         "valery_c", Unit.SHIPMENT, 
 	                                        LocalDate.now().minusWeeks(300), 0);
 	
 	 Assignee assigneeTwelve = new Assignee("MTI-A-SHP-003", "Aaron Godfrey",
@@ -66,12 +66,13 @@ public class AssigneeDAOImpl implements AssigneeDAO {
 	                                          "jarvis_ivy", Unit.SHIPMENT, 
 	                                          LocalDate.now().minusWeeks(200), 0);
 	
-	 Assignee assigneeFourteen = new Assignee("MTI-A-SHP-005",
-	                                          "Zackary Marble", "zackary.m", Unit.SHIPMENT, 
+	 Assignee assigneeFourteen = new Assignee("MTI-A-SHP-005", "Zackary Marble",
+	                                           "zackary.m", Unit.SHIPMENT, 
 	                                          LocalDate.now().minusWeeks(167), 0);
 	
-	 Assignee assigneeFifteen = new Assignee("MTI-A-SHP-006", "Williams Weir", "williams_weir", 
-	                                         Unit.SHIPMENT, LocalDate.now().minusWeeks(243), 0);
+	 Assignee assigneeFifteen = new Assignee("MTI-A-SHP-006", "Williams Weir",
+	                                         "williams_weir", Unit.SHIPMENT,
+	                                          LocalDate.now().minusWeeks(243), 0);
 
 	 assigneeList = List.of(assigneeOne, assigneeTwo, assigneeThree,
 	                        assigneeFour, assigneeFive, assigneeSix,

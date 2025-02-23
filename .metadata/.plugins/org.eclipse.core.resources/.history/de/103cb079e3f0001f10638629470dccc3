@@ -1,0 +1,50 @@
+package com.issuetracker.thread;
+
+public class ReportThread implements Runnable {
+
+    private IssueService issueService;
+
+    private static PropertiesConfiguration propertiesConfiguration;
+    private static final Log LOG = LogFactory.getLog(ReportThread.class);
+
+    static {
+	try {
+	    propertiesConfiguration = new Configurations().properties("configuration.properties");
+	} catch (ConfigurationException e) {
+	    LOG.error(e.getMessage());
+	}
+    }
+
+    public ReportThread(IssueService issueService) {
+	this.issueService = issueService;
+    }
+
+    @Override
+    public void run() {
+	LOG.info("Mont Trance Inc. | Reporting An Issue");
+
+	Issue issue = new Issue("MTI-I-013-LS", "Booting up time is very high",
+	                        Unit.ADMINISTRATION, LocalDate.now().minusDays(1), null,
+	                        null, IssueStatus.OPEN);
+
+	try {
+	    String issueId = issueService.reportAnIssue(issue);
+	    LOG.info(propertiesConfiguration.getProperty("IssueTester.REPORT_ISSUE_SUCCESS")
+	             + " " + issueId);
+	} catch (IssueTrackerException issueTrackerException) {
+	    String exceptionMessage = issueTrackerException.getMessage();
+	    if (exceptionMessage == null) {
+		exceptionMessage = "IssueTester.GENERAL_EXCEPTION";
+	    }
+
+	    String errorMessage = (String)propertiesConfiguration.getProperty(exceptionMessage);
+	    if (errorMessage == null) {
+		errorMessage = (String)propertiesConfiguration.getProperty("IssueTester.GENERAL_EXCEPTION");
+	    }
+
+	    LOG.info(String.format("ERROR: %s", errorMessage));
+	}
+    }
+
+}
+

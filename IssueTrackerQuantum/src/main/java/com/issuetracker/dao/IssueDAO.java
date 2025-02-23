@@ -5,7 +5,6 @@ import com.issuetracker.model.IssueStatus;
 
 import java.util.List;
 
-
 public interface IssueDAO {
     
     public abstract List<Issue> getIssueList();

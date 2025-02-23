@@ -26,7 +26,7 @@ public class IssueServiceImpl implements IssueService {
     private Validator validator = new Validator();
 
     @Override
-    public String reportAnIssue(Issue issue) throws IssueTrackerException {
+    public synchronized String reportAnIssue(Issue issue) throws IssueTrackerException {
 	try {
 	    validator.validate(issue);
 	    
@@ -49,7 +49,7 @@ public class IssueServiceImpl implements IssueService {
     }
 
     @Override
-    public Boolean updateStatus(String issueId, IssueStatus status) throws IssueTrackerException {
+    public synchronized Boolean updateStatus(String issueId, IssueStatus status) throws IssueTrackerException {
 	try {
 	    Issue issue = issueDAO.getIssueById(issueId);
 	    
@@ -74,7 +74,7 @@ public class IssueServiceImpl implements IssueService {
     }
 
     @Override
-    public List<IssueReport> showIssues(Map<Character, Object> filterCriteria) throws IssueTrackerException {
+    public synchronized List<IssueReport> showIssues(Map<Character, Object> filterCriteria) throws IssueTrackerException {
 	try {
 	    List<Issue> issues = issueDAO.getIssueList();
 	    List<Issue> filteredIssues = new ArrayList<>();
@@ -108,7 +108,7 @@ public class IssueServiceImpl implements IssueService {
     }
 
     @Override
-    public List<Issue> deleteIssues() throws IssueTrackerException {
+    public synchronized List<Issue> deleteIssues() throws IssueTrackerException {
 	try {
 	    List<Issue> issuesToBeDeleted = issueDAO.getIssueList()
 		    			 	    .stream()

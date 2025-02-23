@@ -47,8 +47,7 @@ public class Validator {
     }
 
     public Boolean isValidStatus(IssueStatus status) {
-	return status != null && (status.equals(IssueStatus.OPEN) || 
-		status.equals(IssueStatus.IN_PROGRESS));
+	return status != null && (status.equals(IssueStatus.OPEN) || status.equals(IssueStatus.IN_PROGRESS));
     }
     
 }

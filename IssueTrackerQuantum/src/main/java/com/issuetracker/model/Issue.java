@@ -12,8 +12,9 @@ public class Issue {
     private String assigneeEmail;
     private IssueStatus status;
 
-    public Issue(String issueId, String issueDescription, Unit issueUnit, LocalDate reportedOn, 
-                 LocalDate updatedOn, String assigneeEmail, IssueStatus status) { 
+    public Issue(String issueId, String issueDescription, Unit issueUnit, 
+                 LocalDate reportedOn, LocalDate updatedOn,
+                 String assigneeEmail, IssueStatus status) { 
 	this.issueId = issueId;
 	this.issueDescription = issueDescription;
 	this.issueUnit = issueUnit;
